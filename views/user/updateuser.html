@@ -186,32 +186,18 @@
                                         <input type="text" class="form-control" ng-model="location.state">
                                     </td>
                                     <td>
-<!--                                        {{location.country}}-->
+
                                         <select ng-model="location.country" ng-options="value.id as value.name for value in country">
-<!--
-                                            <option >Select Country</option>
-                                            <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
--->
+
                                         </select>
-<!--
-                                        <a class="btn btn-default" ng-click="changelocationcountry(location);">Check</a>
-                                        <a class="btn btn-default" ng-click="changelocationcountry2(location);">Check2</a>
--->
+
                                     </td>
                                     <td>
                                         <input type="text" class="form-control" ng-model="location.pincode">
                                     </td>
-                                    <!--
-                                <td><select ng-model="location.pincode">
-                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>
-                                    </select>
-                                </td>
--->
-                                    <!--                                <td><input type="text" ng-model="location.pincode"  class="form-control"></td>-->
                                     <td>
                                         <input type="button" ng-click="removelocation(user.userlocation.indexOf(location));" value="DELETE">
                                     </td>
-                                    <!--                                <td><a ng-click="removelocation($index);" class="btn btn-danger">Delete</a></td>-->
                                 </tr>
                             </tbody>
                         </table>

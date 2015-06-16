@@ -1,5 +1,4 @@
 var appUser = angular.module('appUser', ['userRest', 'ngRoute']);
-var abc={};
 appUser.controller('user',
     function ($scope, userRest) {
         $scope.demo = "";
@@ -72,7 +71,6 @@ appUser.controller('edituser',
                 pincode: ''
             });
         };
-    abc=$scope;
         $scope.removelocation = function (i) {
             $scope.user.userlocation.splice(i, 1);
         };
@@ -101,28 +99,13 @@ appUser.controller('edituser',
             $scope.user = data;
             $scope.user.dob = new Date($scope.user.dob);
             $scope.user.country = $scope.user.country.id;
-            $scope.user.userlocation.country = $scope.user.userlocation.country.id;
             $scope.alldata = data;
         };
         userRest.findoneuser($scope.value).success(finduser);
-        
-        var country="";
-        $scope.changelocationcountry=function(location) {
-            console.log(location);
-            country=location.country;
-            location.country="";
-//            location.country=country;
-        }
-        $scope.changelocationcountry2=function(location) {
-            location.country=country;
-        }
-    
 
        
         var updated = function (data, status) {
-            userRest.find().success(user);
-            // $scope.visibletable = true;
-            // $scope.updatearea = false;
+            
             $location.url("/user");
             toastr.success("User Updated");
         };

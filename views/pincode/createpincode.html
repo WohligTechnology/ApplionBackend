@@ -1,0 +1,41 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Pincode</strong>
+                </div>
+
+                <div class="panel-body">
+                    <!--DEmo###############################################-->
+
+                    <!--DEmo###############################################-->
+                    <div class="msg">
+                        <!--{{pincode}}-->
+                    </div>
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="pincode.name" placeholder="Pincode">
+                        </div>
+<!--                        {{district}}-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <div>
+                                <select  ng-model="pincode.district">
+                                    <option value="" selected>Select District</option>
+                                    <option ng-repeat="value in district" value="{{value.id}}">{{value.name}}</option>
+<!--
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+-->
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" ng-click="create(pincode)" class="btn btn-success btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>User</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                   <!-- {{user}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="user.name" placeholder="Name" disabled>
+                            <input type="hidden" class="form-control" ng-model="user.id" placeholder="ID" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="user.email" id="exampleInputEmail1" placeholder="Enter email" disabled>
+                            <!--
+                            <input  type="hidden"
+                                            class="form-control"
+                                            required
+                                            name="type_something"
+                                            data-ng-trim='false'
+                                            ng-model="user.password"
+                                    >           
+-->
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact</label>
+                            <input type="text" class="form-control" ng-model="user.contact" placeholder="Contact" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Poosh-woosh Id</label>
+                            <input type="text" class="form-control" ng-model="user.pooshwooshid" placeholder="Poosh-woosh Id" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pin</label>
+                            <input type="text" class="form-control" ng-model="user.pin" placeholder="Pin" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Gender</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="gender" ng-model="user.gender" type="radio" value="male"><span>Male</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="gender" ng-model="user.gender" type="radio" value="female" checked><span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="user.district" placeholder="District" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <input type="text" class="form-control" ng-model="user.state" placeholder="State" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="user.country" disabled>
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="user.pincode" placeholder="Pincode" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" ng-model="user.address" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">DOB</label>
+                            <input type="date" class="form-control" ng-model="user.dob" placeholder="dob">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">AccessLevel</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="admin"><span>Admin</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="store" checked><span>store</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="user"><span>user</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/user"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+   
+                    </form> 
+                    
+            </section>
+        </div>
+        </div>
+    </div>

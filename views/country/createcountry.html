@@ -1,0 +1,54 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Country</strong>
+                </div>
+
+                <div class="panel-body">
+                    <!--DEmo###############################################-->
+
+                    <!--DEmo###############################################-->
+                    <div class="msg">
+                        <!--{{country}}-->
+                    </div>
+                    <form name="form_constraints" class="form-validation"  enctype="multipart/form-data" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <input type="text" class="form-control" ng-model="country.name" placeholder="Country">
+                        </div>
+<!--
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+-->
+<!--                            <img src="img/default_upload_logo.gif">-->
+                            <!--input type="file" class="file" ng-model="form.logo"-->
+<!--                            <input type="text" class="file" ng-model="country.logo">-->
+<!--
+                            <input type="file" ng-model="country.image"/>
+                            <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
+-->
+<!--                        </div>-->
+<!--                        {{country}}-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country Code</label>
+                            <input type="tel" class="form-control" ng-model="country.countrycode" placeholder="Country Code">
+<!--
+                            <div>
+                                <select  ng-model="country.country">
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+                                </select>
+                            </div>
+-->
+                        </div>
+                        <button type="submit" ng-click="create(country)" class="btn btn-success btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

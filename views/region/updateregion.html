@@ -1,0 +1,28 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>region</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                    <!--{{region}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="region.name" placeholder="Text">
+                        </div>
+                      
+                        
+                    
+                        <button type="submit" ng-click="update(region)" class="btn btn-primary">Update</button>
+                    </form> 
+                    
+            </section>
+        </div>
+        </div>
+    </div>

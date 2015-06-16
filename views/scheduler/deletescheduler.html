@@ -1,0 +1,41 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Scheduler</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                   <!-- {{scheduler}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="scheduler.name" placeholder="Name">
+                        </div>
+                        <div class="panel-body form-group">
+                           <label for="exampleInputEmail1">Timestamp</label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group ui-datepicker">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" 
+                                               class="form-control"
+                                               datepicker-popup="{{format}}"
+                                               ng-model="scheduler.toscheduledate"
+                                               >
+                                    </div>
+                                   </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/scheduler"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+                    </form>      
+                    
+            </section>
+        </div>
+        </div>
+    </div>

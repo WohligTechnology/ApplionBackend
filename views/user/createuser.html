@@ -1,0 +1,123 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> User</strong>
+                </div>
+
+                <div class="panel-body">
+                    <!--DEmo###############################################-->
+
+                    <!--DEmo###############################################-->
+                    <div class="msg">
+                        <!--{{user}}-->
+                    </div>
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="user.name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="user.email" id="exampleInputEmail1" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" required ng-model="user.password">
+                        </div>
+                           <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <input type="password" class="form-control" required ng-model="user.cpassword">
+                        </div><span style="color:red;" ng-if="span==true">Password did not match</span>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact</label>
+                            <input type="text" class="form-control" ng-model="user.contact" placeholder="Contact">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Poosh-woosh Id</label>
+                            <input type="text" class="form-control" ng-model="user.pooshwooshid" placeholder="Poosh-woosh Id">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pin</label>
+                            <input type="text" class="form-control" ng-model="user.pin" placeholder="Pin">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Gender</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.gender" type="radio" value="male"><span>Male</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.gender" type="radio" value="female" checked><span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="user.district" placeholder="District">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <input type="text" class="form-control" ng-model="user.state" placeholder="State">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="user.country">
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="user.pincode" placeholder="Pincode">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Location</label>
+                            <div>
+                                <select  ng-model="user.userlocation" multiple>
+                                    <option value="" selected>Select User Location</option>
+                                    <option ng-repeat="value in userlocation" value="{{value.id}}">{{value.name}}({{value.address}})</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" ng-model="user.address" placeholder="Address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">DOB</label>
+                            <input type="date" class="form-control" ng-model="user.dob">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">AccessLevel</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="admin"><span>Admin</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="store" checked><span>Store</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="user"><span>User</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" ng-click="create(user)" class="btn btn-success btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

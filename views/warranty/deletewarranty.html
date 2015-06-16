@@ -1,0 +1,110 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>User</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                   <!-- {{user}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       
+                            <input type="hidden" class="form-control" ng-model="warranty.id" placeholder="ID" disabled>
+<div class="form-group">
+                            <label for="exampleInputEmail1">Period</label>
+                            <input type="text" class="form-control" ng-model="warranty.period" placeholder="Period" disabled>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Expiry</label>
+                            <input type="date" class="form-control" ng-model="warranty.expiry" placeholder="Expiry" disabled>
+                        </div>
+
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Type</label>
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="warranty.type" disabled>
+                                    <option value="" selected>Select Type</option>
+                                    <option value="onsite">onsite</option>
+                                    <option value="offsite">offsite</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Is Covered</label>
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="warranty.iscovered" disabled>
+                                    <option value="" selected>Select Is Covered</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Is Warranty Or AMC</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="warranty.iswarrentyoramc" disabled>
+                                    <option value="" selected>Select Is Warranty Or AMC</option>
+                                    <option value="warranty">warranty</option>
+                                    <option value="amc">amc</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Purchase Date</label>
+                            <input type="date" class="form-control" ng-model="warranty.purchasedate" placeholder="purchasedate">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">bill no</label>
+                            <input type="text" class="form-control" ng-model="warranty.billno" placeholder="billno">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Store</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="warranty.store">
+                                    <option value="" selected>Select Store</option>
+                                    <option ng-repeat="value in store" value="{{value.id}}">{{value.name}}</option>
+<!--
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+-->
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Is Includes</label>
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="warranty.includes">
+                                    <option value="" selected>Select Is Includes</option>
+                                    <option value="visit free">visit free</option>
+                                    <option value="service">service</option>
+                                    <option value="parts">parts</option>
+                                    <option value="other">other</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/user"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+   
+                    </form> 
+                    
+            </section>
+        </div>
+        </div>
+    </div>

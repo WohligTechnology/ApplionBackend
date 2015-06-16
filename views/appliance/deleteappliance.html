@@ -1,0 +1,92 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>appliance</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="appliance.name" placeholder="Name" disabled>
+                            <input type="hidden" class="form-control" ng-model="appliance.id" placeholder="Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Model Number</label>
+                            <input type="text" class="form-control" ng-model="appliance.modelnumber" placeholder="Model Number" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Serial Number</label>
+                            <input type="text" class="form-control" ng-model="appliance.serialnumber" placeholder="Serial Number" disabled>
+                        </div>
+<!--                        {{appliance}}-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Appliance Type</label>
+                            <div>
+                                <select  ng-model="appliance.appliancetype" disabled>
+                                    <option value="" selected>Select Appliance Type</option>
+                                    <option ng-repeat="value in appliancetype" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Brand</label>
+                            <div>
+                                <select  ng-model="appliance.brand" disabled>
+                                    <option value="" selected>Select brand</option>
+                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User</label>
+                            <div>
+                                <select  ng-model="appliance.user" disabled>
+                                    <option value="" selected>Select user</option>
+                                    <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Store</label>
+                            <div>
+                                <select  ng-model="appliance.store" disabled>
+                                    <option value="" selected>Select store</option>
+                                    <option ng-repeat="value in store" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Location</label>
+                            <input type="text" class="form-control" ng-model="appliance.location" placeholder="Location" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Purchase Price</label>
+                            <input type="text" class="form-control" ng-model="appliance.purchaseprice" placeholder="Purchase Price" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div>
+                                <select  ng-model="appliance.status" disabled>
+                                    <option value="" selected>Select Status</option>
+<!--                                    <option ng-repeat="value in appliance" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="archive">Archive</option>
+                                    <option value="delete">Delete</option>
+                                    <option value="transfer">Transfer</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                    
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/appliance"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+                    </form>      
+                    
+            </section>
+        </div>
+        </div>
+    </div>

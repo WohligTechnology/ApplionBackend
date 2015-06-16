@@ -1,0 +1,37 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Call Rating</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                   <div class="msg"> </div>       
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Spoken To Name</label>
+                            <input type="text" class="form-control" ng-model="callrating.spokentoname" placeholder="spokentoname">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Discussion</label>
+<!--                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">-->
+                            <textarea type="text" ng-model="callrating.discussion" style="margin: 0px; width: 693px; height: 88px;"></textarea>
+                        </div>
+                        
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">rating</label>
+                            <input type="text" class="form-control" ng-model="callrating.rating" placeholder="rating">
+                        </div>
+                       
+                        <button type="submit"  ng-click="create(callrating)" class="btn btn-success btn-primary">Submit</button>
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

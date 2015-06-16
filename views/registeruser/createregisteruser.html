@@ -1,0 +1,34 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Register User</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                   <div class="msg"> </div>       
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="registeruser.name" placeholder="Title">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Phone Number</label>
+                            <input type="text" class="form-control" ng-model="registeruser.phoneno" placeholder="Text">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Gps Location</label>
+                            <input type="text" class="form-control" ng-model="registeruser.gpslocation" placeholder="Text">
+                        </div>
+                        <button type="submit"  ng-click="create(registeruser)" class="btn btn-success btn-primary">Submit</button>
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

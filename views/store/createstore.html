@@ -1,0 +1,326 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Store</strong>
+                </div>
+
+                <div class="panel-body">
+                    <div class="msg"> </div>
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="store.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" ng-model="store.email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact Number</label>
+                            <input type="text" class="form-control" ng-model="store.contact" placeholder="Contact Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SMS Number</label>
+                            <input type="text" class="form-control" ng-model="store.smsnumber" placeholder="SMS Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SMS Format</label>
+                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <!--                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">-->
+                            <div>
+                                <textarea type="text" ng-model="store.address" style="margin: 0px; width: 693px; height: 88px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="store.district" placeholder="District">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <input type="text" class="form-control" ng-model="store.state" placeholder="State">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="store.country">
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="store.pincode" placeholder="Pincode">
+                        </div>
+                        <!--
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="store.pincode">
+                                    <option value="" selected>Select Pincode</option>
+                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+-->
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">user</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.user">
+                                    <option value="" selected>Select user</option>
+                                    <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Latitude</label>
+                            <input type="text" class="form-control" ng-model="store.lat" placeholder="Latitude">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Longitude</label>
+                            <input type="text" class="form-control" ng-model="store.long" placeholder="Longitude">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Time From</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.timefrom">
+                                    <option value="" selected>Select Time From</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="00:00 AM">00:00 AM</option>
+                                    <option value="00:30 AM">00:30 AM</option>
+                                    <option value="01:00 AM">01:00 AM</option>
+                                    <option value="01:30 AM">01:30 AM</option>
+                                    <option value="02:00 AM">02:00 AM</option>
+                                    <option value="02:30 AM">02:30 AM</option>
+                                    <option value="03:00 AM">03:00 AM</option>
+                                    <option value="03:30 AM">03:30 AM</option>
+                                    <option value="04:00 AM">04:00 AM</option>
+                                    <option value="04:30 AM">04:30 AM</option>
+                                    <option value="05:00 AM">05:00 AM</option>
+                                    <option value="05:30 AM">05:30 AM</option>
+                                    <option value="06:00 AM">06:00 AM</option>
+                                    <option value="06:30 AM">06:30 AM</option>
+                                    <option value="07:00 AM">07:00 AM</option>
+                                    <option value="07:30 AM">07:30 AM</option>
+                                    <option value="08:00 AM">08:00 AM</option>
+                                    <option value="08:30 AM">08:30 AM</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="09:30 AM">09:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="12:30 PM">12:30 PM</option>
+                                    <option value="01:00 PM">01:00 PM</option>
+                                    <option value="01:30 PM">01:30 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="02:30 PM">02:30 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="03:30 PM">03:30 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="04:30 PM">04:30 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                    <option value="05:30 PM">05:30 PM</option>
+                                    <option value="06:00 PM">06:00 PM</option>
+                                    <option value="06:30 PM">06:30 PM</option>
+                                    <option value="07:00 PM">07:00 PM</option>
+                                    <option value="07:30 PM">07:30 PM</option>
+                                    <option value="08:00 PM">08:00 PM</option>
+                                    <option value="08:30 PM">08:30 PM</option>
+                                    <option value="09:00 PM">09:00 PM</option>
+                                    <option value="09:30 PM">09:30 PM</option>
+                                    <option value="10:00 PM">10:00 PM</option>
+                                    <option value="10:30 PM">10:30 PM</option>
+                                    <option value="11:00 PM">11:00 PM</option>
+                                    <option value="11:30 PM">11:30 PM</option>
+                                </select></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Time To</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.timeto">
+                                    <option value="" selected>Select Time To</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="00:00 AM">00:00 AM</option>
+                                    <option value="00:30 AM">00:30 AM</option>
+                                    <option value="01:00 AM">01:00 AM</option>
+                                    <option value="01:30 AM">01:30 AM</option>
+                                    <option value="02:00 AM">02:00 AM</option>
+                                    <option value="02:30 AM">02:30 AM</option>
+                                    <option value="03:00 AM">03:00 AM</option>
+                                    <option value="03:30 AM">03:30 AM</option>
+                                    <option value="04:00 AM">04:00 AM</option>
+                                    <option value="04:30 AM">04:30 AM</option>
+                                    <option value="05:00 AM">05:00 AM</option>
+                                    <option value="05:30 AM">05:30 AM</option>
+                                    <option value="06:00 AM">06:00 AM</option>
+                                    <option value="06:30 AM">06:30 AM</option>
+                                    <option value="07:00 AM">07:00 AM</option>
+                                    <option value="07:30 AM">07:30 AM</option>
+                                    <option value="08:00 AM">08:00 AM</option>
+                                    <option value="08:30 AM">08:30 AM</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="09:30 AM">09:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="12:30 PM">12:30 PM</option>
+                                    <option value="01:00 PM">01:00 PM</option>
+                                    <option value="01:30 PM">01:30 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="02:30 PM">02:30 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="03:30 PM">03:30 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="04:30 PM">04:30 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                    <option value="05:30 PM">05:30 PM</option>
+                                    <option value="06:00 PM">06:00 PM</option>
+                                    <option value="06:30 PM">06:30 PM</option>
+                                    <option value="07:00 PM">07:00 PM</option>
+                                    <option value="07:30 PM">07:30 PM</option>
+                                    <option value="08:00 PM">08:00 PM</option>
+                                    <option value="08:30 PM">08:30 PM</option>
+                                    <option value="09:00 PM">09:00 PM</option>
+                                    <option value="09:30 PM">09:30 PM</option>
+                                    <option value="10:00 PM">10:00 PM</option>
+                                    <option value="10:30 PM">10:30 PM</option>
+                                    <option value="11:00 PM">11:00 PM</option>
+                                    <option value="11:30 PM">11:30 PM</option>
+                                </select></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Holiday Calender</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.holidaycalender">
+                                    <option value="" selected>Select Holiday Calender</option>
+                                    <option ng-repeat="value in holidaycalender" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.type">
+                                    <option value="" selected>Select Type</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="callcenter">Call Center</option>
+                                    <option value="brandservice center">brandservice center</option>
+                                    <option value="authorised service provider">authorised service provider</option>
+                                    <option value="organized service center">organized service center</option>
+                                    <option value="other service provider">other service provider</option>
+                                    <option value="store">store</option>
+                                    <option value="storenservice">storenservice</option>
+                                </select>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Total Average Rating</label>
+                            <input type="text" class="form-control" ng-model="store.totalaveragerating" placeholder="Total Average Rating">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pancard</label>
+                            <input type="text" class="form-control" ng-model="store.pancard" placeholder="pancard">
+                        </div>
+                        <div style="margin-top:15px;margin-bottom:15px;">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pancard Image</label>
+                            <div>
+                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.pancardimage}}">
+                            </div>
+                        </div>
+                        <div class="upload-div">
+                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                            <div class="upload-buttons">
+                                <input type="file" ng-file-select="onFileSelect($files,1)" onclick="this.value=null">
+                            </div>
+                        </div></div>
+                        <div style="margin-top:15px;margin-bottom:15px;">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sample Bill Image</label>
+                            <div>
+                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.samplebillimage}}">
+                            </div>
+                        </div>
+                        <div class="upload-div">
+                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                            <div class="upload-buttons">
+                                <input type="file" ng-file-select="onFileSelect($files,2)" onclick="this.value=null">
+                            </div>
+                        </div></div>
+                        <div style="margin-top:15px;margin-bottom:15px;">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Store Photo Image</label>
+                            <div>
+                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.storephotoimage}}">
+                            </div>
+                        </div>
+                        <div class="upload-div">
+                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                            <div class="upload-buttons">
+                                <input type="file" ng-file-select="onFileSelect($files,3)" onclick="this.value=null">
+                            </div>
+                        </div></div>
+                        <div style="margin-top:15px;margin-bottom:15px;">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">License Image</label>
+                            <div>
+                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.licenseimage}}">
+                            </div>
+                        </div>
+                        <div class="upload-div">
+                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                            <div class="upload-buttons">
+                                <input type="file" ng-file-select="onFileSelect($files,4)" onclick="this.value=null">
+                            </div>
+                        </div></div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="store.status">
+                                    <option value="" selected>Select Status</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="publish for user">Publish For User</option>
+                                    <option value="unpublished">Un-Published</option>
+                                </select></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" ng-click="create(store)" class="btn btn-success btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

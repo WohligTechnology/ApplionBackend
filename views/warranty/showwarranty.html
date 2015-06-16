@@ -1,0 +1,51 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Show warranty</strong>
+                
+                </div>
+<!--                {{data99}}-->
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                  <div class="bot">
+                  <input type="search" name="search" ng-model="search" placeholder="Search"/>
+               <a href="#/warranty/createwarranty" class="right btn btn-primary">Create warranty</a>
+                </div>
+                  
+                   <div class="msg"> {{usermessage}} </div>       
+                  <div ng-show="visibletable">
+                     
+                    <table class="table table-bordered table-striped">
+                        <thead><tr class="bg-dark">
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Period In Month</th>
+                            <th class="text-center">Purchase Date</th>
+                            <th class="text-center">Expiry</th>
+                            <th class="text-center">Bill Number</th>
+                           
+                            <th colspan="2" class="text-center">OPERATIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="value in find|filter:search">
+                            <td class="text-center">{{value.id}}</td>
+                            <td class="text-center">{{value.period}}</td>
+                                <td class="text-center">{{value.purchasedate}}/{{value.purchasemonth}}/{{value.purchaseyear}}</td>
+                                <td class="text-center">{{value.expiry}}</td>
+                                <td class="text-center">{{value.billno}}</td>
+                                <td class="text-center"><a href="#/warranty/delete/{{value.id}}" class="btn btn-primary"><i class="fa fa-times"></i></a></td>
+                                <td class="text-center"><a href="#/warranty/edit/{{value.id}}" class="btn btn-primary">
+                                <i class="fa fa-pencil-square-o"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                    </div>
+                   
+            </section>
+        </div>
+        </div>
+    </div>

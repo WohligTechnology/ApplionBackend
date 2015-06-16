@@ -1,0 +1,43 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> feedback</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                   <div class="msg"> </div>       
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="feedback.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">user</label>
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="feedback.user">
+                                    <option value="" selected>Select user</option>
+                                    <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Feedback</label>
+<!--                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">-->
+                            <textarea type="text" ng-model="feedback.feedback" style="margin: 0px; width: 693px; height: 88px;"></textarea>
+                        </div>
+                        
+                        <button type="submit"  ng-click="create(feedback)" class="btn btn-success btn-primary">Submit</button>
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

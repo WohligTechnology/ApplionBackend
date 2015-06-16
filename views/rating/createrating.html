@@ -1,0 +1,50 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> rating</strong></div>
+                
+                <div class="panel-body">
+                  <!--DEmo###############################################-->
+                  
+                  <!--DEmo###############################################-->
+                   <div class="msg"> </div>       
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">user</label>
+                            <div>
+                            <div><span class="ui-select">
+                                <select  ng-model="rating.user">
+                                    <option value="" selected>Select user</option>
+                                    <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">Global Rating</label>
+                            <input type="text" class="form-control" ng-model="rating.globalrating" placeholder="Global Rating">
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">timely Rating</label>
+                            <input type="text" class="form-control" ng-model="rating.timelyrating" placeholder="timely Rating">
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">servicecharges Rating</label>
+                            <input type="text" class="form-control" ng-model="rating.servicechargesrating" placeholder="servicecharges Rating">
+                        </div>
+                       <div class="form-group">
+                            <label for="exampleInputEmail1">servicequality Rating</label>
+                            <input type="text" class="form-control" ng-model="rating.servicequalityrating" placeholder="servicequality Rating">
+                        </div>
+                        
+                        <button type="submit"  ng-click="create(rating)" class="btn btn-success btn-primary">Submit</button>
+                    </form>      
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>

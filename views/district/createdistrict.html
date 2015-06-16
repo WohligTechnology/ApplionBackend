@@ -1,0 +1,41 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> District</strong>
+                </div>
+
+                <div class="panel-body">
+                    <!--DEmo###############################################-->
+
+                    <!--DEmo###############################################-->
+                    <div class="msg">
+                        <!--{{district}}-->
+                    </div>
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="district.name" placeholder="District">
+                        </div>
+<!--                        {{district}}-->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <div>
+                                <select  ng-model="district.state">
+                                    <option value="" selected>Select State</option>
+                                    <option ng-repeat="value in state" value="{{value.id}}">{{value.name}}</option>
+<!--
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+-->
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" ng-click="create(district)" class="btn btn-success btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

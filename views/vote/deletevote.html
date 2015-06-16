@@ -1,0 +1,58 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Vote</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                   <!-- {{notification}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Region</label>
+                            <div>
+                                <select  ng-model="vote.region">
+                                    <option value="" selected>Select Position</option>
+                                    <option value="1">Mumbai</option>
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Polling Area</label>
+                            <input type="text" class="form-control" ng-model="vote.pollingarea" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Polling Center</label>
+                            <input type="text" class="form-control" ng-model="vote.pollingcenter" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="vote.name" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Phone Number</label>
+                            <input type="text" class="form-control" ng-model="vote.phoneno" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Area</label>
+                            <input type="text" class="form-control" ng-model="vote.area" placeholder="Text">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Landmark/City</label>
+                            <input type="text" class="form-control" ng-model="vote.city" placeholder="Text">
+                        </div>
+                      
+                        <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>
+                       <a href="#/vote"> <button type="submit" class="btn btn-success btn-primary">Cancel</button></a>
+                    </form>      
+                    
+            </section>
+        </div>
+        </div>
+    </div>

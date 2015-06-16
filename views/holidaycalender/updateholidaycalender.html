@@ -1,0 +1,68 @@
+<div class="page">
+
+    <div class="row" ng-show="pageview==1">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Holiday Calender</strong>
+
+                </div>
+
+                <div class="panel-body">
+
+                    <!--                    {{holidaycalender}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="holidaycalender.name" placeholder="Name">
+                            <input type="hidden" class="form-control" ng-model="holidaycalender.id" placeholder="ID">
+                        </div>
+                 </form>
+                </div>
+            </section>
+            </div>
+            
+            <div class="col-md-3">
+                <div ng-include="'views/holidaycalender/subnavigation.html'"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" ng-show="pageview==2">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Holiday Calender</strong>
+
+                </div>
+
+                <div class="panel-body">
+                    {{holidaycalenderdate}}
+                    <a ng-click="addholiday();" class="btn btn-success">Add</a>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Dates</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="holiday in holidaycalenderdate">
+                                <td><input type="date" ng-model="holiday.date" class="form-control"></td>
+                                <td><input type="button" ng-click="removeholiday(holidaycalenderdate.indexOf(holiday));" value="DELETE"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+        <div class="col-md-3">
+            <div ng-include="'views/holidaycalender/subnavigation.html'"></div>
+        </div>
+        
+    </div>
+    <div class="col-md-offset-4">
+    <button type="submit" ng-click="update(holidaycalender)" class="btn btn-primary">Update</button>
+    </div>
+</div>

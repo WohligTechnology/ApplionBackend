@@ -1,0 +1,34 @@
+<div class="page">
+
+    <div class="row">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Article</strong>
+                
+                </div>
+                
+                <div class="panel-body">
+                   
+                    
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                       
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text" class="form-control" ng-model="article.title" placeholder="Title">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Text</label>
+                            <input type="text" class="form-control" ng-model="article.text" id="exampleInputEmail1" placeholder="Enter Text">
+                                      
+                               
+                        </div>
+                        
+                    
+                        <button type="submit" ng-click="update(article)" class="btn btn-primary">Update</button>
+                    </form> 
+                    
+            </section>
+        </div>
+        </div>
+    </div>

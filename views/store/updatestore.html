@@ -1,0 +1,524 @@
+<div class="page">
+
+    <div class="row" ng-show="pageview==1">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> store</strong>
+
+                </div>
+
+                <div class="panel-body">
+
+
+                    <!--                   {{store}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="store.name" placeholder="Name">
+                            <input type="hidden" class="form-control" ng-model="store.id" placeholder="ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" ng-model="store.email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact Number</label>
+                            <input type="text" class="form-control" ng-model="store.contact" placeholder="Contact Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SMS Number</label>
+                            <input type="text" class="form-control" ng-model="store.smsnumber" placeholder="SMS Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">SMS Format</label>
+                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <!--                            <input type="text" class="form-control" ng-model="store.smsformat" placeholder="SMS Format">-->
+                            <div>
+                                <textarea type="text" ng-model="store.address" style="margin: 0px; width: 693px; height: 88px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="store.district" placeholder="District">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <input type="text" class="form-control" ng-model="store.state" placeholder="State">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <div><span class="ui-select">
+                                <select ng-model="store.country">
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="store.pincode" placeholder="Pincode">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User</label>
+                            <div>
+                                <div><span class="ui-select">
+                                <select  ng-model="store.user">
+                                    <option value="" selected>Select User</option>
+                                    <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Latitude</label>
+                                <input type="text" class="form-control" ng-model="store.lat" placeholder="Latitude">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Longitude</label>
+                                <input type="text" class="form-control" ng-model="store.long" placeholder="Longitude">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Time From</label>
+                                <div>
+                                    <div><span class="ui-select">
+                                <select  ng-model="store.timefrom">
+                                    <option value="" selected>Select Time From</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="00:00 AM">00:00 AM</option>
+                                    <option value="00:30 AM">00:30 AM</option>
+                                    <option value="01:00 AM">01:00 AM</option>
+                                    <option value="01:30 AM">01:30 AM</option>
+                                    <option value="02:00 AM">02:00 AM</option>
+                                    <option value="02:30 AM">02:30 AM</option>
+                                    <option value="03:00 AM">03:00 AM</option>
+                                    <option value="03:30 AM">03:30 AM</option>
+                                    <option value="04:00 AM">04:00 AM</option>
+                                    <option value="04:30 AM">04:30 AM</option>
+                                    <option value="05:00 AM">05:00 AM</option>
+                                    <option value="05:30 AM">05:30 AM</option>
+                                    <option value="06:00 AM">06:00 AM</option>
+                                    <option value="06:30 AM">06:30 AM</option>
+                                    <option value="07:00 AM">07:00 AM</option>
+                                    <option value="07:30 AM">07:30 AM</option>
+                                    <option value="08:00 AM">08:00 AM</option>
+                                    <option value="08:30 AM">08:30 AM</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="09:30 AM">09:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="12:30 PM">12:30 PM</option>
+                                    <option value="01:00 PM">01:00 PM</option>
+                                    <option value="01:30 PM">01:30 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="02:30 PM">02:30 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="03:30 PM">03:30 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="04:30 PM">04:30 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                    <option value="05:30 PM">05:30 PM</option>
+                                    <option value="06:00 PM">06:00 PM</option>
+                                    <option value="06:30 PM">06:30 PM</option>
+                                    <option value="07:00 PM">07:00 PM</option>
+                                    <option value="07:30 PM">07:30 PM</option>
+                                    <option value="08:00 PM">08:00 PM</option>
+                                    <option value="08:30 PM">08:30 PM</option>
+                                    <option value="09:00 PM">09:00 PM</option>
+                                    <option value="09:30 PM">09:30 PM</option>
+                                    <option value="10:00 PM">10:00 PM</option>
+                                    <option value="10:30 PM">10:30 PM</option>
+                                    <option value="11:00 PM">11:00 PM</option>
+                                    <option value="11:30 PM">11:30 PM</option>
+                                </select></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Time To</label>
+                                    <div>
+                                        <div><span class="ui-select">
+                                <select  ng-model="store.timeto">
+                                    <option value="" selected>Select Time To</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="00:00 AM">00:00 AM</option>
+                                    <option value="00:30 AM">00:30 AM</option>
+                                    <option value="01:00 AM">01:00 AM</option>
+                                    <option value="01:30 AM">01:30 AM</option>
+                                    <option value="02:00 AM">02:00 AM</option>
+                                    <option value="02:30 AM">02:30 AM</option>
+                                    <option value="03:00 AM">03:00 AM</option>
+                                    <option value="03:30 AM">03:30 AM</option>
+                                    <option value="04:00 AM">04:00 AM</option>
+                                    <option value="04:30 AM">04:30 AM</option>
+                                    <option value="05:00 AM">05:00 AM</option>
+                                    <option value="05:30 AM">05:30 AM</option>
+                                    <option value="06:00 AM">06:00 AM</option>
+                                    <option value="06:30 AM">06:30 AM</option>
+                                    <option value="07:00 AM">07:00 AM</option>
+                                    <option value="07:30 AM">07:30 AM</option>
+                                    <option value="08:00 AM">08:00 AM</option>
+                                    <option value="08:30 AM">08:30 AM</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="09:30 AM">09:30 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="10:30 AM">10:30 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="11:30 AM">11:30 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="12:30 PM">12:30 PM</option>
+                                    <option value="01:00 PM">01:00 PM</option>
+                                    <option value="01:30 PM">01:30 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="02:30 PM">02:30 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="03:30 PM">03:30 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="04:30 PM">04:30 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                    <option value="05:30 PM">05:30 PM</option>
+                                    <option value="06:00 PM">06:00 PM</option>
+                                    <option value="06:30 PM">06:30 PM</option>
+                                    <option value="07:00 PM">07:00 PM</option>
+                                    <option value="07:30 PM">07:30 PM</option>
+                                    <option value="08:00 PM">08:00 PM</option>
+                                    <option value="08:30 PM">08:30 PM</option>
+                                    <option value="09:00 PM">09:00 PM</option>
+                                    <option value="09:30 PM">09:30 PM</option>
+                                    <option value="10:00 PM">10:00 PM</option>
+                                    <option value="10:30 PM">10:30 PM</option>
+                                    <option value="11:00 PM">11:00 PM</option>
+                                    <option value="11:30 PM">11:30 PM</option>
+                                </select></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Holiday Calender</label>
+                                        <div>
+                                            <div><span class="ui-select">
+                                <select  ng-model="store.holidaycalender">
+                                    <option value="" selected>Select Holiday Calender</option>
+                                    <option ng-repeat="value in holidaycalender" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Type</label>
+                                        <div>
+                                            <div><span class="ui-select">
+                                <select  ng-model="store.type">
+                                    <option value="" selected>Select Type</option>
+<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="callcenter">Call Center</option>
+                                    <option value="brandservice center">brandservice center</option>
+                                    <option value="authorised service provider">authorised service provider</option>
+                                    <option value="organized service center">organized service center</option>
+                                    <option value="other service provider">other service provider</option>
+                                    <option value="store">store</option>
+                                    <option value="storenservice">storenservice</option>
+                                </select>
+                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Total Average Rating</label>
+                                            <input type="text" class="form-control" ng-model="store.totalaveragerating" placeholder="Total Average Rating">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Pancard</label>
+                                            <input type="text" class="form-control" ng-model="store.pancard" placeholder="pancard">
+                                        </div>
+                                        <div style="margin-top:15px;margin-bottom:15px;">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Pancard Image</label>
+                                                <div>
+                                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.pancardimage}}">
+                                                </div>
+                                            </div>
+                                            <div class="upload-div">
+                                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                                <div class="upload-buttons">
+                                                    <input type="file" ng-file-select="onFileSelect($files,1)" onclick="this.value=null">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top:15px;margin-bottom:15px;">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Sample Bill Image</label>
+                                                <div>
+                                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.samplebillimage}}">
+                                                </div>
+                                            </div>
+                                            <div class="upload-div">
+                                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                                <div class="upload-buttons">
+                                                    <input type="file" ng-file-select="onFileSelect($files,2)" onclick="this.value=null">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top:15px;margin-bottom:15px;">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Store Photo Image</label>
+                                                <div>
+                                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.storephotoimage}}">
+                                                </div>
+                                            </div>
+                                            <div class="upload-div">
+                                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                                <div class="upload-buttons">
+                                                    <input type="file" ng-file-select="onFileSelect($files,3)" onclick="this.value=null">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top:15px;margin-bottom:15px;">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">License Image</label>
+                                                <div>
+                                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.licenseimage}}">
+                                                </div>
+                                            </div>
+                                            <div class="upload-div">
+                                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                                <div class="upload-buttons">
+                                                    <input type="file" ng-file-select="onFileSelect($files,4)" onclick="this.value=null">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Status</label>
+                                            <div><span class="ui-select">
+                                <select  ng-model="store.status">
+                                    <option value="" selected>Select Status</option>
+                                    <option value="publish for user">Publish For User</option>
+                                    <option value="unpublished">Un-Published</option>
+                                </select></span>
+                                            </div>
+                                        </div>
+                    </form>
+
+            </section>
+            </div>
+            <div class="col-md-3">
+                <div ng-include="'views/store/subnavigation.html'"></div>
+
+            </div>
+            </div>
+            <div class="row" ng-show="pageview==2">
+                <div class="col-md-9">
+                    <section class="panel panel-default">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Rating</strong>
+
+                        </div>
+
+                        <div class="panel-body">
+                            {{store.rating}}
+                            <a ng-click="addrating();" class="btn btn-success">Add</a>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>User</td>
+                                        <td>globalrating</td>
+                                        <td>timelyrating</td>
+                                        <td>servicechargesrating</td>
+                                        <td>servicequalityrating</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="rating in store.rating">
+                                        <td>
+                                            <select ng-model="rating.user">
+                                                <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="rating.globalrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="rating.timelyrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="rating.servicechargesrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="rating.servicequalityrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="button" ng-click="removerating(store.rating.indexOf(rating));" value="DELETE" class="bt btn-danger">
+                                        </td>
+                                        <!--                                <td><a ng-click="removelocation($index);" class="btn btn-danger">Delete</a></td>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="col-md-3">
+                    <div ng-include="'views/store/subnavigation.html'"></div>
+                </div>
+
+            </div>
+            <div class="row" ng-show="pageview==3">
+                <div class="col-md-9">
+                    <section class="panel panel-default">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Call Rating</strong>
+
+                        </div>
+
+                        <div class="panel-body">
+                            {{store.callrating}}
+                            <a ng-click="addcallrating();" class="btn btn-success">Add</a>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>spokentoname</td>
+                                        <td>discussion</td>
+                                        <td>rating</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="callrating in store.callrating">
+
+                                        <td>
+                                            <input type="text" ng-model="callrating.spokentoname" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="callrating.discussion" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="callrating.rating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="button" ng-click="removecallrating(store.callrating.indexOf(callrating));" value="DELETE" class="bt btn-danger">
+                                        </td>
+                                        <!--                                <td><a ng-click="removelocation($index);" class="btn btn-danger">Delete</a></td>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="col-md-3">
+                    <div ng-include="'views/store/subnavigation.html'"></div>
+                </div>
+
+            </div>
+            <div class="row" ng-show="pageview==4">
+                <div class="col-md-9">
+                    <section class="panel panel-default">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Store</strong>
+
+                        </div>
+
+                        <div class="panel-body">
+                            {{store.servicereport}}
+                            <a ng-click="addservicereport();" class="btn btn-success">Add</a>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>Call Type</td>
+                                        <td>Agency Name</td>
+                                        <td>Service Engineer Name</td>
+                                        <td>Problem Detail</td>
+                                        <td>Service render</td>
+                                        <td>Call Status</td>
+                                        <td>Feedback</td>
+                                        <td>Global Rating</td>
+                                        <td>Timely Rating</td>
+                                        <td>Service Changes Rating</td>
+                                        <td>Service Quality Rating</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="servicerepo in store.servicereport">
+                                        <td>
+                                            <select ng-model="servicerepo.calltype">
+                                                <option value="">Select Call Type</option>
+                                                <option value="amc">AMC</option>
+                                                <option value="warranty">Warranty</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.agencyname" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.serviceengineername" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.problemdetail" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.servicerender" class="form-control">
+                                        </td>
+                                        <td>
+                                            <select ng-model="servicerepo.callstatus">
+                                                <option value="">Select Call Status</option>
+                                                <option value="completed">Completed</option>
+                                                <option value="incomplete">Incomplete</option>
+                                                <option value="underobservation">Under Observation</option>
+                                                <option value="amountpaid">amount Paid</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.feedback" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.globalrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.timelyrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.servicechangesrating" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" ng-model="servicerepo.servicequalityrating" class="form-control">
+                                        </td>
+                                        <!--                                <td><input type="text" ng-model="servicerepo.pincode"  class="form-control"></td>-->
+                                        <td>
+                                            <input type="button" ng-click="removeservicereport(store.servicereport.indexOf(servicerepo));" value="DELETE">
+                                        </td>
+                                        <!--                                <td><a ng-click="removeservicerepo($index);" class="btn btn-danger">Delete</a></td>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="col-md-3">
+                    <div ng-include="'views/store/subnavigation.html'"></div>
+                </div>
+
+            </div>
+            <div class="col-md-offset-4">
+                <button type="submit" ng-click="update(store)" class="btn btn-primary">Update</button>
+                <!--            <button type="submit" ng-click="update(appliance)" class="btn btn-primary">Update</button>-->
+            </div>
+            </div>
+            </form>
+            </div>
+            </section>
+            </div>
+        </div>
+    </div>

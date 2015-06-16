@@ -1,0 +1,228 @@
+<div class="page">
+
+    <div class="row" ng-show="pageview==1">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>User</strong>
+
+                </div>
+
+                <div class="panel-body">
+
+                    <!--                    {{user}}-->
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="user.name" placeholder="Name" required>
+                            <input type="hidden" class="form-control" ng-model="user.id" placeholder="ID">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" ng-model="user.email" id="exampleInputEmail1" placeholder="Enter email" required>
+                            <!--
+                            <input  type="hidden"
+                                            class="form-control"
+                                            required
+                                            name="type_something"
+                                            data-ng-trim='false'
+                                            ng-model="user.password"
+                                    >           
+-->
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" ng-model="user.editpassword" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <input type="password" class="form-control" ng-model="user.editcpassword" placeholder="Confirm Password">
+                        </div><span style="color:red;" ng-if="span==true">Password did not match</span>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contact</label>
+                            <input type="text" class="form-control" ng-model="user.contact" placeholder="Contact">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Poosh-woosh Id</label>
+                            <input type="text" class="form-control" ng-model="user.pooshwooshid" placeholder="Poosh-woosh Id">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pin</label>
+                            <input type="text" class="form-control" ng-model="user.pin" placeholder="Pin">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Gender</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="gender" ng-model="user.gender" type="radio" value="male"><span>Male</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="gender" ng-model="user.gender" type="radio" value="female" checked><span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                            <input type="text" class="form-control" ng-model="user.district" placeholder="District">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State</label>
+                            <input type="text" class="form-control" ng-model="user.state" placeholder="State">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="user.country">
+                                    <option value="" selected>Select Country</option>
+                                    <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pincode</label>
+                            <input type="text" class="form-control" ng-model="user.pincode" placeholder="Pincode">
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Location</label>
+                            <div ng-repeat="userloc in userlocation" style="padding:10px;border:1px solid;">
+                                <input type="text" ng-model="userloc.name">
+                                <input type="text" ng-model="userloc.id">
+                                <textarea type="text" ng-model="userloc.address"></textarea>
+                                <select ng-model="userloc.pincode">
+                                    <option value="">Select Pincode</option>
+                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>
+                                    
+                                    <option value="2">Pune</option>
+                                    <option value="3">Delhi</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+-->
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" ng-model="user.address" placeholder="Address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">DOB</label>
+                            <input type="date" class="form-control" ng-model="user.dob" placeholder="dob">
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">AccessLevel</label>
+                            <div>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="admin"><span>Admin</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="store" checked><span>store</span>
+                                </label>
+                                <label class="ui-radio">
+                                    <input name="radio1" ng-model="user.accesslevel" type="radio" value="user"><span>user</span>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-center" style="padding-bottom:20px;">
+                        <button type="submit" ng-click="update(user)" class="btn btn-primary">Update</button>
+                    </div>
+            </section>
+            </div>
+            <div class="col-md-3">
+                <div ng-include="'views/user/subnavigation.html'"></div>
+            </div>
+        </div>
+        <div class="row" ng-show="pageview==2">
+            <div class="col-md-9">
+                <section class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>User</strong>
+
+                    </div>
+
+                    <div class="panel-body">
+                        {{user.userlocation}}
+                        <a ng-click="addlocation();" class="btn btn-success">Add</a>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Address</td>
+                                    <td>District</td>
+                                    <td>State</td>
+                                    <td>Country</td>
+                                    <td>Pincode</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="location in user.userlocation">
+                                    <td>
+                                        <input type="text" ng-model="location.name" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" ng-model="location.address" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="location.district">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="location.state">
+                                    </td>
+                                    <td>
+<!--                                        {{location.country}}-->
+                                        <select ng-model="location.country" ng-options="value.id as value.name for value in country">
+<!--
+                                            <option >Select Country</option>
+                                            <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
+-->
+                                        </select>
+<!--
+                                        <a class="btn btn-default" ng-click="changelocationcountry(location);">Check</a>
+                                        <a class="btn btn-default" ng-click="changelocationcountry2(location);">Check2</a>
+-->
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="location.pincode">
+                                    </td>
+                                    <!--
+                                <td><select ng-model="location.pincode">
+                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>
+                                    </select>
+                                </td>
+-->
+                                    <!--                                <td><input type="text" ng-model="location.pincode"  class="form-control"></td>-->
+                                    <td>
+                                        <input type="button" ng-click="removelocation(user.userlocation.indexOf(location));" value="DELETE">
+                                    </td>
+                                    <!--                                <td><a ng-click="removelocation($index);" class="btn btn-danger">Delete</a></td>-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center" style="padding-bottom:20px;">
+                        <button type="submit" ng-click="update2(user)" class="btn btn-primary">Update</button>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-3">
+                <div ng-include="'views/user/subnavigation.html'"></div>
+            </div>
+        </div>
+    </div>

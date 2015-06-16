@@ -1,0 +1,154 @@
+<div class="page">
+
+    <div class="row" ng-show="pageview==1">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Brand</strong>
+
+                </div>
+
+                <div class="panel-body">
+
+
+                    <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" class="form-control" ng-model="brand.name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Abbreviation</label>
+                            <input type="text" class="form-control" ng-model="brand.abbreviation" placeholder="Abbreviation">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image</label>
+                            <div>
+                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{brand.image}}">
+                            </div>
+                        </div>
+                        <div class="upload-div" ng-controller="MyCtrl">
+                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                            <div class="upload-buttons">
+                                <input type="file" ng-file-select="onFileSelect($files)" onclick="this.value=null">
+                            </div>
+                            <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100" style="height:250px;">Drop Files Here
+                                <center>
+                                    <div ng-show="selectedFiles != null">
+                                        <div class="sel-file center" ng-repeat="f in selectedFiles">
+                                            <div ng-show="$last">
+                                                <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}" width="240px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                            <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
+                            <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
+
+                            <div class="response" ng-show="uploadResult.length > 0">
+                                <span ng-repeat="result in uploadResult">
+                                        <div ng-init="">
+                                        {{result}}
+                                        </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div>
+                                <select ng-model="brand.status">
+                                    <option value="" selected>Select Status</option>
+                                    <!--                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="IsPublished for User">IsPublished for User</option>
+                                    <option value="Not Published for User">Not Published for User</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="text-center" style="padding-bottom:20px;">
+                    <button type="submit" ng-click="update(brand)" class="btn btn-primary">Update</button>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-3">
+            <div ng-include="'views/brand/subnavigation.html'"></div>
+        </div>
+    </div>
+    <div class="row" ng-show="pageview==2">
+        <div class="col-md-9">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>Brand</strong>
+
+                </div>
+                <div class="panel-body">
+                    {{brand.appliancetype}}
+                    <a ng-click="addappliancetype();" class="btn btn-success">Add</a>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Icon</td>
+                                <td>Abbrevation</td>
+                                <td>Actions</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="location in brand.appliancetype">
+                                <td>
+                                    <input type="text" ng-model="location.name" class="form-control">
+                                </td>
+                                <td>
+                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{location.icon}}">
+                                    <div class="upload-div">
+                                        <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                        <div class="upload-buttons">
+                                            <input type="file" ng-file-select="onFileSelect($files,uploaded,brand.appliancetype.indexOf(location))" onclick="this.value=null">
+                                        </div>
+<!--
+                                        <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100" style="height:250px;">Drop Files Here
+                                            <center>
+                                                <div ng-show="selectedFiles != null">
+                                                    <div class="sel-file center" ng-repeat="f in selectedFiles">
+                                                        <div ng-show="$last">
+                                                            <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}" width="240px">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+-->
+<!--                                        <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>-->
+                                        <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
+
+                                        <div class="response" ng-show="uploadResult.length > 0">
+                                            <span ng-repeat="result in uploadResult">
+                                        <div ng-init="">
+<!--                                        <input type="text" ng-model="location.icon=result" class="form-control">-->
+                                        </div>
+<!--
+                                </span>
+                                            <input type="text" ng-model="location.icon=uploadResult[uploadResult.length-1]" class="form-control"> -->
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="location.abbreviation">
+                                </td>
+                                <td>
+                                    <input type="button" ng-click="removeappliancetype(brand.appliancetype.indexOf(location));" value="DELETE" class="bt btn-danger"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center" style="padding-bottom:20px;">
+                    <button type="submit" ng-click="update2(brand)" class="btn btn-primary">Update</button>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-3">
+            <div ng-include="'views/brand/subnavigation.html'"></div>
+        </div>
+    </div>
+</div>

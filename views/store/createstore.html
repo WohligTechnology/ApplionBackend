@@ -21,7 +21,10 @@
                             <label for="exampleInputEmail1">Contact Number</label>
                             <input type="text" class="form-control" ng-model="store.contact" placeholder="Contact Number">
                         </div>
-
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sales Person</label>
+                            <input type="text" class="form-control" ng-model="store.saleperson" placeholder="Sales Person">
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">SMS Number</label>
                             <input type="text" class="form-control" ng-model="store.smsnumber" placeholder="SMS Number">
@@ -254,57 +257,61 @@
                             <input type="text" class="form-control" ng-model="store.pancard" placeholder="pancard">
                         </div>
                         <div style="margin-top:15px;margin-bottom:15px;">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Pancard Image</label>
-                            <div>
-                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.pancardimage}}">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Pancard Image</label>
+                                <div>
+                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.pancardimage}}">
+                                </div>
+                            </div>
+                            <div class="upload-div">
+                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                <div class="upload-buttons">
+                                    <input type="file" ng-file-select="onFileSelect($files,1)" onclick="this.value=null">
+                                </div>
                             </div>
                         </div>
-                        <div class="upload-div">
-                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
-                            <div class="upload-buttons">
-                                <input type="file" ng-file-select="onFileSelect($files,1)" onclick="this.value=null">
-                            </div>
-                        </div></div>
                         <div style="margin-top:15px;margin-bottom:15px;">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Sample Bill Image</label>
-                            <div>
-                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.samplebillimage}}">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Sample Bill Image</label>
+                                <div>
+                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.samplebillimage}}">
+                                </div>
+                            </div>
+                            <div class="upload-div">
+                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                <div class="upload-buttons">
+                                    <input type="file" ng-file-select="onFileSelect($files,2)" onclick="this.value=null">
+                                </div>
                             </div>
                         </div>
-                        <div class="upload-div">
-                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
-                            <div class="upload-buttons">
-                                <input type="file" ng-file-select="onFileSelect($files,2)" onclick="this.value=null">
-                            </div>
-                        </div></div>
                         <div style="margin-top:15px;margin-bottom:15px;">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Store Photo Image</label>
-                            <div>
-                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.storephotoimage}}">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Store Photo Image</label>
+                                <div>
+                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.storephotoimage}}">
+                                </div>
+                            </div>
+                            <div class="upload-div">
+                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                <div class="upload-buttons">
+                                    <input type="file" ng-file-select="onFileSelect($files,3)" onclick="this.value=null">
+                                </div>
                             </div>
                         </div>
-                        <div class="upload-div">
-                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
-                            <div class="upload-buttons">
-                                <input type="file" ng-file-select="onFileSelect($files,3)" onclick="this.value=null">
-                            </div>
-                        </div></div>
                         <div style="margin-top:15px;margin-bottom:15px;">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">License Image</label>
-                            <div>
-                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.licenseimage}}">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">License Image</label>
+                                <div>
+                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{store.licenseimage}}">
+                                </div>
+                            </div>
+                            <div class="upload-div">
+                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
+                                <div class="upload-buttons">
+                                    <input type="file" ng-file-select="onFileSelect($files,4)" onclick="this.value=null">
+                                </div>
                             </div>
                         </div>
-                        <div class="upload-div">
-                            <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
-                            <div class="upload-buttons">
-                                <input type="file" ng-file-select="onFileSelect($files,4)" onclick="this.value=null">
-                            </div>
-                        </div></div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Status</label>
                             <div><span class="ui-select">

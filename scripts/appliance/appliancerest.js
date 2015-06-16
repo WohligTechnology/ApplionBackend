@@ -25,6 +25,10 @@ var applianceRest = angular.module('applianceRest', [])
             console.log();
             return $http.get(apiurl+"user");
         },
+        finduserlocation: function(){
+            console.log();
+            return $http.get(apiurl+"userlocation");
+        },
         findstore: function(){
             console.log();
             return $http.get(apiurl+"store");

@@ -179,6 +179,13 @@ appAppliance.controller('createappliance',
         };
         applianceRest.findbrand().success(brand);
 
+        var userlocation = function (data, status) {
+            console.log(data);
+            // $scope.find=data;
+            $scope.userlocation = data;
+        };
+        applianceRest.finduserlocation().success(userlocation);
+
         var user = function (data, status) {
             console.log(data);
             // $scope.find=data;
@@ -198,8 +205,6 @@ appAppliance.controller('createappliance',
             $location.url("/appliance");
             uploadres = [];
         }
-
-
         $scope.create = function (data) {
             data.billimage = uploadres;
             applianceRest.create(data).success(appliancecreated);
@@ -229,7 +234,6 @@ appAppliance.controller('editappliance',
 
         $scope.uploaded = function (c) {
             console.log(c);
-            console.log("Jagruti Rocks");
         }
 
         $scope.angularVersion = window.location.hash.length > 1 ? (window.location.hash.indexOf('/') === 1 ?
@@ -237,7 +241,6 @@ appAppliance.controller('editappliance',
 
         $scope.howToSend = 1;
         var start = function (index, whichone) {
-            console.log("Chinki");
             $scope.progress[index] = 0;
             $scope.errorMsg = null;
 
@@ -275,13 +278,27 @@ appAppliance.controller('editappliance',
                             if (imagejstupld != "") {
                                 console.log(imagejstupld);
                                 $scope.appliance.billimage.push(imagejstupld);
-                                imagejstupld=[];
+                                imagejstupld = [];
                             }
                         } else if (whichone == 2) {
                             if (imagejstupld != "") {
                                 console.log(imagejstupld);
                                 $scope.appliance.warranty[$scope.locationindex].images.push(imagejstupld);
                                 console.log($scope.appliance.warranty);
+                                imagejstupld = [];
+                            }
+                        } else if (whichone == 3) {
+                            if (imagejstupld != "") {
+                                console.log(imagejstupld);
+                                $scope.appliance.componentwarranty[$scope.locationindex].bill = imagejstupld;
+                                console.log($scope.appliance);
+                                imagejstupld = [];
+                            }
+                        } else if (whichone == 4) {
+                            if (imagejstupld != "") {
+                                console.log(imagejstupld);
+                                $scope.appliance.componentwarranty[$scope.locationindex].warrantycard = imagejstupld;
+                                console.log($scope.appliance);
                                 imagejstupld = [];
                             }
                         }
@@ -388,7 +405,7 @@ appAppliance.controller('editappliance',
                 serial: '',
                 warrantyperiod: '',
                 bill: '',
-                warrentycard: ''
+                warrantycard: ''
             });
         };
         $scope.removecomponentwarranty = function (i) {
@@ -437,6 +454,13 @@ appAppliance.controller('editappliance',
         };
         applianceRest.findbrand().success(brand);
 
+        var userlocation = function (data, status) {
+            console.log(data);
+            // $scope.find=data;
+            $scope.userlocation = data;
+        };
+        applianceRest.finduserlocation().success(userlocation);
+
         var user = function (data, status) {
             console.log(data);
             $scope.user = data;
@@ -456,12 +480,11 @@ appAppliance.controller('editappliance',
                 n.expiry = new Date(n.expiry);
                 n.purchasedate = new Date(n.purchasedate);
             });
-            $scope.appliance.brand = $scope.appliance.brand.id;
-            $scope.appliance.user = $scope.appliance.user.id;
-            $scope.appliance.store = $scope.appliance.store.id;
-            $scope.appliance.appliancetype = $scope.appliance.appliancetype.id;
+//            $scope.appliance.brand = $scope.appliance.brand.id;
+//            $scope.appliance.user = $scope.appliance.user.id;
+//            $scope.appliance.store = $scope.appliance.store.id;
+//            $scope.appliance.appliancetype = $scope.appliance.appliancetype.id;
             console.log(data);
-            console.log($scope.appliance.warranty.expiry);
         };
         applianceRest.findoneappliance($scope.value).success(findappliance);
 

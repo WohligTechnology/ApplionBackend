@@ -100,7 +100,12 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Location</label>
-                            <input type="text" class="form-control" ng-model="appliance.location" placeholder="Location">
+                            <div>
+                                <select ng-model="appliance.userlocation" class="form-control">
+                                    <option value="" selected>Select Location</option>
+                                    <option ng-repeat="value in userlocation" value="{{value.id}}">{{value.name}}</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Purchase Price</label>

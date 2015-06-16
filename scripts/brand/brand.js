@@ -20,7 +20,7 @@ appBrand.controller('brand',
     });
 appBrand.controller('createbrand',
     function ($scope, brandRest, $location, $http, $timeout, $upload) {
-        $scope.brand = [];
+        $scope.brand = {};
         var imagejstupld = "";
         //    ###########################################################3
         $scope.usingFlash = FileAPI && FileAPI.upload != null;
@@ -174,7 +174,7 @@ appBrand.controller('createbrand',
         }
         $scope.create = function (data) {
             console.log(data);
-            brandRest.create(data).success(brandcreated);
+            brandRest.create(data,brandcreated);
         };
     });
 

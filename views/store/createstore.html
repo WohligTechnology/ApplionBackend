@@ -5,7 +5,6 @@
             <section class="panel panel-default">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Store</strong>
                 </div>
-
                 <div class="panel-body">
                     <div class="msg"> </div>
                     <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
@@ -24,6 +23,16 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Sales Person</label>
                             <input type="text" class="form-control" ng-model="store.saleperson" placeholder="Sales Person">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="store.status">
+                                    <option value="">Select Status</option>
+                                    <option value="publish for user">Publish For User</option>
+                                    <option value="unpublished">Un-Published</option>
+                                </select></span>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">SMS Number</label>
@@ -54,7 +63,7 @@
                             <label for="exampleInputEmail1">Country</label>
                             <div><span class="ui-select">
                                 <select  ng-model="store.country">
-                                    <option value="" selected>Select Country</option>
+                                    <option value="">Select Country</option>
                                     <option ng-repeat="value in country" value="{{value.id}}">{{value.name}}</option>
                                 </select>
                                 </span>
@@ -64,24 +73,12 @@
                             <label for="exampleInputEmail1">Pincode</label>
                             <input type="text" class="form-control" ng-model="store.pincode" placeholder="Pincode">
                         </div>
-                        <!--
-                            <div>
-                            <div><span class="ui-select">
-                                <select  ng-model="store.pincode">
-                                    <option value="" selected>Select Pincode</option>
-                                    <option ng-repeat="value in pincode" value="{{value.id}}">{{value.name}}</option>
-                                </select>
-                                </span>
-                            </div>
-                        </div>
--->
-
                         <div class="form-group">
                             <label for="exampleInputEmail1">user</label>
                             <div>
                                 <div><span class="ui-select">
                                 <select  ng-model="store.user">
-                                    <option value="" selected>Select user</option>
+                                    <option value="">Select user</option>
                                     <option ng-repeat="value in user" value="{{value.id}}">{{value.name}}</option>
                                 </select>
                                 </span>
@@ -102,8 +99,7 @@
                             <div>
                                 <div><span class="ui-select">
                                 <select  ng-model="store.timefrom">
-                                    <option value="" selected>Select Time From</option>
-<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
+                                    <option value="">Select Time From</option>
                                     <option value="00:00 AM">00:00 AM</option>
                                     <option value="00:30 AM">00:30 AM</option>
                                     <option value="01:00 AM">01:00 AM</option>
@@ -161,7 +157,7 @@
                             <div>
                                 <div><span class="ui-select">
                                 <select  ng-model="store.timeto">
-                                    <option value="" selected>Select Time To</option>
+                                    <option value="">Select Time To</option>
 <!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
                                     <option value="00:00 AM">00:00 AM</option>
                                     <option value="00:30 AM">00:30 AM</option>
@@ -221,7 +217,7 @@
                             <div>
                                 <div><span class="ui-select">
                                 <select  ng-model="store.holidaycalender">
-                                    <option value="" selected>Select Holiday Calender</option>
+                                    <option value="">Select Holiday Calender</option>
                                     <option ng-repeat="value in holidaycalender" value="{{value.id}}">{{value.name}}</option>
                                 </select>
                                 </span>
@@ -233,7 +229,7 @@
                             <div>
                                 <div><span class="ui-select">
                                 <select  ng-model="store.type">
-                                    <option value="" selected>Select Type</option>
+                                    <option value="">Select Type</option>
 <!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
                                     <option value="callcenter">Call Center</option>
                                     <option value="brandservice center">brandservice center</option>
@@ -312,18 +308,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Status</label>
-                            <div><span class="ui-select">
-                                <select  ng-model="store.status">
-                                    <option value="" selected>Select Status</option>
-<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
-                                    <option value="publish for user">Publish For User</option>
-                                    <option value="unpublished">Un-Published</option>
-                                </select></span>
-                            </div>
-                        </div>
-
                         <button type="submit" ng-click="create(store)" class="btn btn-success btn-primary">Submit</button>
                     </form>
                 </div>

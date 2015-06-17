@@ -23,7 +23,20 @@
                             <label for="exampleInputEmail1">Contact Number</label>
                             <input type="text" class="form-control" ng-model="store.contact" placeholder="Contact Number" disabled>
                         </div>
-                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sales Person</label>
+                            <input type="text" class="form-control" ng-model="store.saleperson" placeholder="Sales Person" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <div><span class="ui-select">
+                                <select  ng-model="store.status" disabled>
+                                    <option value="">Select Status</option>
+                                    <option value="publish for user">Publish For User</option>
+                                    <option value="unpublished">Un-Published</option>
+                                </select></span>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">SMS Number</label>
                             <input type="text" class="form-control" ng-model="store.smsnumber" placeholder="SMS Number" disabled>
@@ -226,19 +239,6 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Pancard</label>
                             <input type="text" class="form-control" ng-model="store.pancard" placeholder="pancard" disabled>
-                        </div>
-                        
-                        
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Status</label>
-                            <div><span class="ui-select">
-                                <select  ng-model="store.status" disabled>
-                                    <option value="" selected>Select Status</option>
-<!--                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>-->
-                                    <option value="publish for user">Publish For User</option>
-                                    <option value="unpublished">Un-Published</option>
-                                </select></span>
-                            </div>
                         </div>
                         
                         <button type="submit" ng-click="delete()" class="btn btn-success btn-primary">Confirm Delete</button>

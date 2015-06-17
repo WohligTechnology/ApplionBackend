@@ -480,10 +480,11 @@ appAppliance.controller('editappliance',
                 n.expiry = new Date(n.expiry);
                 n.purchasedate = new Date(n.purchasedate);
             });
-//            $scope.appliance.brand = $scope.appliance.brand.id;
-//            $scope.appliance.user = $scope.appliance.user.id;
-//            $scope.appliance.store = $scope.appliance.store.id;
-//            $scope.appliance.appliancetype = $scope.appliance.appliancetype.id;
+            $scope.appliance.brand = $scope.appliance.brand.id;
+            $scope.appliance.user = $scope.appliance.user.id;
+            $scope.appliance.store = $scope.appliance.store.id;
+            $scope.appliance.appliancetype = $scope.appliance.appliancetype.id;
+            $scope.appliance.userlocation = $scope.appliance.userlocation.id;
             console.log(data);
         };
         applianceRest.findoneappliance($scope.value).success(findappliance);

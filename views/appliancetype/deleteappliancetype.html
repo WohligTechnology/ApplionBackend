@@ -10,39 +10,23 @@
                     <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="text" class="form-control" ng-model="appliancetype.name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{appliancetype.icon}}">
-                            <div class="upload-div">
-                                <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
-                                <div class="upload-buttons">
-                                    <input type="file" ng-file-select="onFileSelect($files)" onclick="this.value=null">
-                                </div>
-                                <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
-
-                                <div class="response" ng-show="uploadResult.length > 0">
-                                    <span ng-repeat="result in uploadResult">
-                                        <div ng-init="">
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" ng-model="appliancetype.name" placeholder="Name" disabled>
+                            <input type=""
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Abbreviation</label>
-                            <input type="text" class="form-control" ng-model="appliancetype.abbreviation" placeholder="Abbreviation">
+                            <input type="text" class="form-control" ng-model="appliancetype.abbreviation" placeholder="Abbreviation" disabled>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Brand</label>
                             <div>
-                                <select ng-model="appliancetype.brand">
+                                <select ng-model="appliancetype.brand" disabled>
                                     <option value="">Select Brand</option>
                                     <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" ng-click="update(appliancetype)" class="btn btn-primary">Update</button>
+                        <button type="submit" ng-click="delete(appliancetype)" class="btn btn-primary">Delete</button>
                     </form>
                 </div>
             </section>

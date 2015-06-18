@@ -173,7 +173,6 @@ appBrand.controller('createbrand',
             $location.url("/brand");
         }
         $scope.create = function (data) {
-            console.log(data);
             brandRest.create(data,brandcreated);
         };
     });
@@ -390,20 +389,11 @@ appBrand.controller('editbrand',
 
 
         $scope.update = function (data) {
-            console.log(uploadres);
-
-            if (uploadres != "") {
-                data.image = uploadres[uploadres.length - 1].trim();
-            }
             brandRest.updatebrand($scope.brand).success(updated);
         };
         $scope.update2 = function (data) {
             brandRest.updatebrand($scope.brand).success(updated);
         };
-
-
-
-
     });
 
 appBrand.controller('deletebrand',

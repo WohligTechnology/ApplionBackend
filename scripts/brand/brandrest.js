@@ -5,9 +5,9 @@ var brandRest = angular.module('brandRest', [])
 .factory('brandRest', function ($http) {
 
     return {
-        create: function (data2,callback) {
-            console.log(data2);
-            $http.post(apiurl + "brand",data2).success(function(data) {callback(data)});
+        create: function (data) {
+            console.log(data);
+            return $http.post(apiurl + "brand",data);
         },
         find: function () {
             console.log();

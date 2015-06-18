@@ -145,6 +145,7 @@
         controller: [
           '$scope', '$element', '$attrs', '$location', function($scope, $element, $attrs, $location) {
             var highlightActive, links, path;
+              
             links = $element.find('a');
             path = function() {
               return $location.path();
@@ -156,10 +157,11 @@
                 $link = angular.element(link);
                 $li = $link.parent('li');
                 href = $link.attr('href');
+                 
                 if ($li.hasClass('active')) {
                   $li.removeClass('active');
                 }
-                if (path.indexOf(href) === 0) {
+                if (path==href) {
                   return $li.addClass('active');
                 }
               });

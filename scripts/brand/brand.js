@@ -173,7 +173,7 @@ appBrand.controller('createbrand',
             $location.url("/brand");
         }
         $scope.create = function (data) {
-            brandRest.create(data,brandcreated);
+            brandRest.create(data).success(brandcreated);
         };
     });
 

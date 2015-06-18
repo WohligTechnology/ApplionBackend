@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'easypiechart', 'mgo-angular-wizard', 'textAngular', 'ui.tree', 'ngMap', 'ngTagsInput', 'app.ui.ctrls', 'app.ui.directives', 'app.ui.services', 'app.controllers', 'app.directives', 'app.form.validation', 'app.ui.form.ctrls', 'app.ui.form.directives', 'app.tables', 'app.map', 'app.task', 'app.localization', 'app.chart.ctrls', 'app.chart.directives', 'app.page.ctrls','appUser','userRest','appArticle','articleRest','appScheduler','schedulerRest','appVideo','videoRest','appImage','imageRest','appVote','voteRest','registeruserRest','appRegisteruser','appMembership','membershipRest','appMlaconstituency','mlaconstituencyRest','appMpconstituency','mpconstituencyRest','appPosition','positionRest','appRegion','regionRest','appUpload','uploadRest','appCenter','centerRest','appLogin','loginRest','appBrand','brandRest','appAppliance','applianceRest','appStore','storeRest','appFeedback','feedbackRest','appNotification','notificationRest','appPincode','pincodeRest','appDistrict','districtRest','appCountry','countryRest','appState','stateRest','appRating','ratingRest','appCallrating','callratingRest','appWarranty','warrantyRest','appHolidayCalender','holidaycalenderRest']).config([
+  angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'easypiechart', 'mgo-angular-wizard', 'textAngular', 'ui.tree', 'ngMap', 'ngTagsInput', 'app.ui.ctrls', 'app.ui.directives', 'app.ui.services', 'app.controllers', 'app.directives', 'app.form.validation', 'app.ui.form.ctrls', 'app.ui.form.directives', 'app.tables', 'app.map', 'app.task', 'app.localization', 'app.chart.ctrls', 'app.chart.directives', 'app.page.ctrls','appUser','userRest','appArticle','articleRest','appScheduler','schedulerRest','appVideo','videoRest','appImage','imageRest','appVote','voteRest','registeruserRest','appRegisteruser','appMembership','membershipRest','appMlaconstituency','mlaconstituencyRest','appMpconstituency','mpconstituencyRest','appPosition','positionRest','appRegion','regionRest','appUpload','uploadRest','appCenter','centerRest','appLogin','loginRest','appBrand','brandRest','appAppliance','applianceRest','appStore','storeRest','appFeedback','feedbackRest','appNotification','notificationRest','appPincode','pincodeRest','appDistrict','districtRest','appCountry','countryRest','appState','stateRest','appRating','ratingRest','appCallrating','callratingRest','appWarranty','warrantyRest','appHolidayCalender','holidaycalenderRest','appAppliancetype','appliancetypeRest']).config([
     '$routeProvider', function($routeProvider) {
       return $routeProvider.when('/', {
         redirectTo: '/user'
@@ -57,6 +57,19 @@
       }).when('/appliance/edit/:id',{
           templateUrl: 'views/appliance/updateappliance.html',
           controller:'editappliance'
+      
+      }).when('/appliancetype', {
+        templateUrl: 'views/appliancetype/appliancetype.html',
+          controller:'appliancetype'
+      }).when('/appliancetype/createappliancetype', {
+        templateUrl: 'views/appliancetype/createappliancetype.html',
+          controller: 'createappliancetype'
+      }).when('/appliancetype/delete/:id',{
+          templateUrl: 'views/appliancetype/deleteappliancetype.html',
+          controller:'deleteappliancetype'
+      }).when('/appliancetype/edit/:id',{
+          templateUrl: 'views/appliancetype/updateappliancetype.html',
+          controller:'editappliancetype'
           
       }).when('/store', {
         templateUrl: 'views/store/showstore.html',

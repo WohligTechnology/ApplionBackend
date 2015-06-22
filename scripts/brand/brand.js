@@ -180,7 +180,6 @@ appBrand.controller('createbrand',
 appBrand.controller('editbrand',
     function ($scope, brandRest, $location, $routeParams, $http, $timeout, $upload) {
         $scope.id = $routeParams.id;
-        $scope.locationindex = "";
         var imagejstupld = "";
         //        console.log(imagejstupld);
         //    ###########################################################3
@@ -203,7 +202,7 @@ appBrand.controller('editbrand',
             window.location.hash.substring(2) : window.location.hash.substring(1)) : '1.2.20';
 
         $scope.howToSend = 1;
-        var start = function (index,whichone) {
+        var start = function (index) {
             $scope.progress[index] = 0;
             $scope.errorMsg = null;
 
@@ -237,19 +236,11 @@ appBrand.controller('editbrand',
                         $scope.uploadResult.push(response.data);
                         console.log(response.data);
                         imagejstupld = response.data;
-                        if (whichone == 1) {
                             if (imagejstupld != "") {
                                 console.log(imagejstupld);
                                 $scope.brand.image.push(imagejstupld);
                                 imagejstupld="";
                             }
-                        } else if (whichone == 2) {
-                            if (imagejstupld != "") {
-                                console.log(imagejstupld);
-                                $scope.brand.appliancetype[$scope.locationindex].icon.push(imagejstupld);
-                                imagejstupld = "";
-                            }
-                        }
                     });
                 }, function (response) {
                     if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
@@ -283,8 +274,7 @@ appBrand.controller('editbrand',
         };
 
 
-        $scope.onFileSelect = function ($files,whichone,index) {
-            $scope.locationindex = index;
+        $scope.onFileSelect = function ($files) {
             $scope.selectedFiles = [];
             $scope.progress = [];
             if ($scope.upload && $scope.upload.length > 0) {
@@ -315,7 +305,7 @@ appBrand.controller('editbrand',
                 $scope.progress[i] = -1;
                 if ($scope.uploadRightAway) {
                     console.log("Android");
-                    start(i,whichone);
+                    start(i);
                 }
             }
         };
@@ -341,20 +331,12 @@ appBrand.controller('editbrand',
         $scope.value = $routeParams.id;
         $scope.brand = [];
         toastr.success($scope.value);
-        $scope.addappliancetype = function () {
-            $scope.brand.appliancetype.push({
-                name: "",
-                icon: "",
-                abbreviation: ""
-            });
-        };
-        $scope.removeappliancetype = function (i) {
-            $scope.brand.appliancetype.splice(i, 1);
-        };
+        
         $scope.pageview = 1;
         $scope.changepageview = function (num) {
             $scope.pageview = num;
         }
+        brandRest.findappliancetype($scope.value).success(appliancetype);
         var findbrand = function (data, status) {
             $scope.brand = {};
             $scope.brand = data;

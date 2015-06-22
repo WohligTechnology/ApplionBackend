@@ -166,11 +166,7 @@ appAppliancetype.controller('createappliancetype',
             return hasFile ? "dragover" : "dragover-err";
         };
         //    ###########################################################3
-        var brand = function (data, status) {
-            console.log(data);
-            $scope.brand = data;
-        };
-        appliancetypeRest.findbrand().success(brand);
+        
 
         $scope.demo = "hello";
         var appliancetypecreated = function (data, status) {
@@ -333,11 +329,7 @@ appAppliancetype.controller('editappliancetype',
             return hasFile ? "dragover" : "dragover-err";
         };
         //    ###########################################################3
-        var brand = function (data, status) {
-            console.log(data);
-            $scope.brand = data;
-        };
-        appliancetypeRest.findbrand().success(brand);
+       
 
         $scope.value = $routeParams.id;
         $scope.appliancetype = {};
@@ -346,7 +338,7 @@ appAppliancetype.controller('editappliancetype',
         var findappliancetype = function (data, status) {
             $scope.appliancetype = {};
             $scope.appliancetype = data;
-            $scope.appliancetype.brand = $scope.appliancetype.brand.id;
+//            $scope.appliancetype.brand = $scope.appliancetype.brand.id;
             console.log(data);
         };
 
@@ -387,16 +379,12 @@ appAppliancetype.controller('deleteappliancetype',
         console.log($scope.value);
         toastr.success($scope.value);
 
-        var brand = function (data, status) {
-            console.log(data);
-            $scope.brand = data;
-        };
-        appliancetypeRest.findbrand().success(brand);
+        
 
         var findappliancetype = function (data, status) {
             $scope.appliancetype = {};
             $scope.appliancetype = data;
-            $scope.appliancetype.brand = $scope.appliancetype.brand.id;
+//            $scope.appliancetype.brand = $scope.appliancetype.brand.id;
             $scope.alldata = data;
         };
 

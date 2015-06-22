@@ -16,15 +16,6 @@
                             <label for="exampleInputEmail1">Abbreviation</label>
                             <input type="text" class="form-control" ng-model="appliancetype.abbreviation" placeholder="Abbreviation" disabled>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Brand</label>
-                            <div>
-                                <select ng-model="appliancetype.brand" disabled>
-                                    <option value="">Select Brand</option>
-                                    <option ng-repeat="value in brand" value="{{value.id}}">{{value.name}}</option>
-                                </select>
-                            </div>
-                        </div>
                         <button type="submit" ng-click="delete(appliancetype)" class="btn btn-primary">Delete</button>
                     </form>
                 </div>

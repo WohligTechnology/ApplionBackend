@@ -25,7 +25,7 @@ appAppliance.controller('appliance',
 appAppliance.controller('createappliance',
     function ($scope, applianceRest, $location, $http, $timeout, $upload) {
         var imagejstupld = [];
-        $scope.appliance = [];
+        $scope.appliance = {};
         $scope.appliance.billimage = [];
         $scope.usingFlash = FileAPI && FileAPI.upload != null;
         $scope.fileReaderSupported = window.FileReader != null && (window.FileAPI == null || FileAPI.html5 != false);
@@ -392,8 +392,7 @@ appAppliance.controller('editappliance',
 
         $scope.value = $routeParams.id;
         toastr.success($scope.value);
-        $scope.appliancesele = {};
-        $scope.appliance = [];
+        $scope.appliance = {};
         $scope.appliance.billimage = [];
         $scope.appliance.warranty = [];
         $scope.appliance.warranty.images = [];

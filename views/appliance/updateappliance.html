@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-4" ng-repeat="bill in appliance.billimage">
-                                <img style="width:200px;height:190px;" src="http://localhost/applionbackendbyavi/uploads/{{bill}}">
+                                <img style="width:200px;height:190px;" src="{{bill | uploadpath}}">
                                 <input type="button" ng-click="removeimage(appliance.billimage.indexOf(bill));" value="DELETE" class="bt btn-danger">
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                     <input type="text" ng-model="componentwarranty.warrantyperiod" class="form-control">
                                 </td>
                                 <td>
-                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{componentwarranty.bill}}">
+                                    <img style="height:250px; width:250px;" src="{{componentwarranty.bill | uploadpath}}">
                                     <div class="upload-div">
                                         <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
                                         <div class="upload-buttons">
@@ -156,7 +156,7 @@
  
                                 </td>
                                 <td>
-                                    <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{componentwarranty.warrantycard}}">
+                                    <img style="height:250px; width:250px;" src="{{componentwarranty.warrantycard | uploadpath}}">
                                     <div class="upload-div">
                                         <div ng-init="httpMethod = 'POST';howToSend = 1;"></div>
                                         <div class="upload-buttons">
@@ -246,7 +246,7 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="col-md-4" ng-repeat="bill in warranty.images">
-                                                        <img style="width:200px;height:190px;" src="http://localhost/applionbackendbyavi/uploads/{{bill}}">
+                                                        <img style="width:200px;height:190px;" src="{{bill | uploadpath}}">
                                                         <input type="button" ng-click="removewarimage(warranty,warranty.images.indexOf(bill));" value="DELETE" class="bt btn-danger">
                                                     </div>
                                                 </div>

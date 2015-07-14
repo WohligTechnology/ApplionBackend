@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
                             <div>
-                                <img style="height:250px; width:250px;" src="http://localhost/applionbackendbyavi/uploads/{{brand.image}}">
+                                <img style="height:250px; width:250px;" src="{{brand.image | uploadpath}}">
                             </div>
                         </div>
                         <div class="upload-div">
@@ -30,7 +30,7 @@
                             <div class="upload-buttons">
                                 <input type="file" ng-file-select="onFileSelect($files,1)" onclick="this.value=null">
                             </div>
-<!--
+                            <!--
                             <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100" style="height:250px;">Drop Files Here
                                 <center>
                                     <div ng-show="selectedFiles != null">
@@ -84,16 +84,16 @@
 
                 </div>
                 <div class="panel-body">
-                   <div class="form-group" ng-repeat="appliance in brand.appliancetype">
-                       <input type="checkbox" class="form-control" ng-model="appliance.name"> 
-                   </div>
-                <div class="text-center" style="padding-bottom:20px;">
-                    <button type="submit" ng-click="update2(brand)" class="btn btn-primary">Update</button>
-                </div>
+                    <div class="form-group" ng-repeat="appliance in brand.appliancetype">
+                        <input type="checkbox" class="form-control" ng-model="appliance.name">
+                    </div>
+                    <div class="text-center" style="padding-bottom:20px;">
+                        <button type="submit" ng-click="update2(brand)" class="btn btn-primary">Update</button>
+                    </div>
             </section>
-        </div>
-        <div class="col-md-3">
-            <div ng-include="'views/brand/subnavigation.html'"></div>
+            </div>
+            <div class="col-md-3">
+                <div ng-include="'views/brand/subnavigation.html'"></div>
+            </div>
         </div>
     </div>
-</div>

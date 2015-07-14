@@ -1,6 +1,6 @@
 var uploadres = [];
 var appAppliance = angular.module('appAppliance', ['applianceRest', 'ngRoute']);
-window.uploadUrl = 'http://localhost/applionbackendbyavi/upload.php';
+window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
 
 appAppliance.controller('appliance',
     function ($scope, applianceRest) {
@@ -164,6 +164,11 @@ appAppliance.controller('createappliance',
             return hasFile ? "dragover" : "dragover-err";
         };
         $scope.demo = "hello";
+
+
+        $scope.removeimage = function (i) {
+            $scope.appliance.billimage.splice(i, 1);
+        };
 
         var appliancetype = function (data, status) {
             console.log(data);
@@ -427,7 +432,6 @@ appAppliance.controller('editappliance',
         $scope.removewarranty = function (i) {
             $scope.appliance.warranty.splice(i, 1);
         };
-
         $scope.removeimage = function (i) {
             $scope.appliance.billimage.splice(i, 1);
         };

@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-4">
-                                <img style="width:200px;height:190px;" src="http://localhost/applionbackendbyavi/uploads/{{appliancetype.icon}}">
+                                <img style="width:200px;height:190px;" src="{{appliancetype.icon | uploadpath}}">
                             </div>
                         </div>
                         <div class="upload-div">
@@ -38,7 +38,7 @@
                             <label for="exampleInputEmail1">Abbreviation</label>
                             <input type="text" class="form-control" ng-model="appliancetype.abbreviation" placeholder="Abbreviation">
                         </div>
-                        
+
                         <button type="submit" ng-click="create(appliancetype)" class="btn btn-success btn-primary">Submit</button>
                     </form>
                 </div>

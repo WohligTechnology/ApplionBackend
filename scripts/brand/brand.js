@@ -1,6 +1,6 @@
 var uploadres = [];
 var appBrand = angular.module('appBrand', ['brandRest', 'ngRoute', 'angularFileUpload']);
-window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
+window.uploadUrl = 'http://localhost/ApplionBackend/upload.php';
 appBrand.controller('brand',
     function ($scope, brandRest) {
         $scope.demo = "";

@@ -459,12 +459,12 @@
                 });
     }
   ])
-    
-        .filter('uploadpath', function () {
-            return function (input) {
-                return "http://wohlig.co.in/ApplionBackend/uploads/" + input;
-            };
-        });
+
+    .filter('uploadpath', function () {
+        return function (input) {
+            return "http://localhost/ApplionBackend/uploads/" + input;
+        };
+    });
 
 }).call(this);
 

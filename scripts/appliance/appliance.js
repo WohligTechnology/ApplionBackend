@@ -1,6 +1,6 @@
 var uploadres = [];
 var appAppliance = angular.module('appAppliance', ['applianceRest', 'ngRoute']);
-window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
+window.uploadUrl = 'http://localhost/ApplionBackend/upload.php';
 
 appAppliance.controller('appliance',
     function ($scope, applianceRest) {
@@ -46,6 +46,7 @@ appAppliance.controller('createappliance',
         $scope.onFileSelect = function ($files) {
             $scope.selectedFiles = [];
             $scope.progress = [];
+            console.log($files);
             if ($scope.upload && $scope.upload.length > 0) {
                 for (var i = 0; i < $scope.upload.length; i++) {
                     if ($scope.upload[i] != null) {
@@ -81,6 +82,7 @@ appAppliance.controller('createappliance',
             $scope.progress[index] = 0;
             $scope.errorMsg = null;
             if ($scope.howToSend == 1) {
+                console.log("Jagruti");
                 $scope.upload[index] = $upload.upload({
                     url: uploadUrl,
                     method: $scope.httpMethod,
@@ -129,6 +131,7 @@ appAppliance.controller('createappliance',
             } else {
                 var fileReader = new FileReader();
                 fileReader.onload = function (e) {
+                    console.log("CHI");
                     $scope.upload[index] = $upload.http({
                         url: uploadUrl,
                         headers: {
@@ -249,6 +252,7 @@ appAppliance.controller('editappliance',
             $scope.errorMsg = null;
 
             if ($scope.howToSend == 1) {
+                console.log("CCC");
                 $scope.upload[index] = $upload.upload({
                     url: uploadUrl,
                     method: $scope.httpMethod,

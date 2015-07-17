@@ -54,24 +54,6 @@
                             <div class="upload-buttons">
                                 <input type="file" ng-file-select="onFileSelect($files)" onclick="this.value=null" multiple>
                             </div>
-                            <!--
-                            <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100" style="height:250px;">Drop Files Here
-                                <center>
-                                    <div ng-show="selectedFiles != null">
-                                        <div class="sel-file center">
-                                            <div ng-repeat="f in selectedFiles">
-                                                <img style="float:left;height:190px;" ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </center>
--->
-                            <!--
-                            </div>
-                            <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
-                            <div class="err" ng-show="errorMsg != null">{{errorMsg}}</div>
--->
-
                             <div class="response" ng-show="uploadResult.length > 0">
                                 <span ng-repeat="result in uploadResult">
                                         <div ng-init="">

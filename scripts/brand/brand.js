@@ -1,6 +1,6 @@
 var uploadres = [];
 var appBrand = angular.module('appBrand', ['brandRest', 'ngRoute', 'angularFileUpload']);
-window.uploadUrl = 'http://localhost/ApplionBackend/upload.php';
+window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
 appBrand.controller('brand',
     function ($scope, brandRest) {
         $scope.demo = "";
@@ -166,7 +166,14 @@ appBrand.controller('createbrand',
             return hasFile ? "dragover" : "dragover-err";
         };
         //    ###########################################################3
-
+        
+        var appliancetype = function (data, status) {
+            console.log(data);
+            // $scope.find=data;
+            $scope.appliancetype = data;
+        };
+        brandRest.findappliancetype().success(appliancetype);
+    
         $scope.demo = "hello";
         var brandcreated = function (data, status) {
             console.log(data);
@@ -236,11 +243,11 @@ appBrand.controller('editbrand',
                         $scope.uploadResult.push(response.data);
                         console.log(response.data);
                         imagejstupld = response.data;
-                            if (imagejstupld != "") {
-                                console.log(imagejstupld);
-                                $scope.brand.image.push(imagejstupld);
-                                imagejstupld="";
-                            }
+                        if (imagejstupld != "") {
+                            console.log(imagejstupld);
+                            $scope.brand.image.push(imagejstupld);
+                            imagejstupld = "";
+                        }
                     });
                 }, function (response) {
                     if (response.status > 0) $scope.errorMsg = response.status + ': ' + response.data;
@@ -327,15 +334,18 @@ appBrand.controller('editbrand',
             return hasFile ? "dragover" : "dragover-err";
         };
         //    ###########################################################3
-
+        
+        var appliancetype = function (data, status) {
+            console.log(data);
+            // $scope.find=data;
+            $scope.appliancetype = data;
+        };
+        brandRest.findappliancetype().success(appliancetype);
+        
         $scope.value = $routeParams.id;
         $scope.brand = [];
         toastr.success($scope.value);
-        
-        $scope.pageview = 1;
-        $scope.changepageview = function (num) {
-            $scope.pageview = num;
-        }
+    
         brandRest.findappliancetype($scope.value).success(appliancetype);
         var findbrand = function (data, status) {
             $scope.brand = {};

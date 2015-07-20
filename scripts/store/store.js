@@ -1,5 +1,5 @@
 var appStore = angular.module('appStore', ['storeRest', 'ngRoute']);
-window.uploadUrl = 'http://localhost/ApplionBackend/upload.php';
+window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
 appStore.controller('store',
     function ($scope, storeRest) {
         $scope.demo = "";

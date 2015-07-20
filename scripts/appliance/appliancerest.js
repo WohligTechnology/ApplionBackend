@@ -3,45 +3,45 @@ var applianceRest = angular.module('applianceRest', [])
 
 
 .factory('applianceRest', function ($http) {
-    
-    return{
-        create: function(data){
+
+    return {
+        create: function (data) {
             console.log(data);
-           return $http.post(apiurl+"appliance",data);
+            return $http.post(apiurl + "appliance", data);
         },
-        find: function(){
+        find: function () {
             console.log();
-            return $http.get(apiurl+"appliance");
+            return $http.get(apiurl + "appliance");
         },
-        findappliancetype: function(){
+        findappliancetype: function () {
             console.log();
-            return $http.get(apiurl+"appliancetype");
-        },
-        findbrand: function(){
+            return $http.get(apiurl + "appliancetype/findallproducts");
+        }
+        findbrand: function () {
             console.log();
-            return $http.get(apiurl+"brand");
+            return $http.get(apiurl + "brand");
         },
-        finduser: function(){
+        finduser: function () {
             console.log();
-            return $http.get(apiurl+"user");
+            return $http.get(apiurl + "user");
         },
-        finduserlocation: function(){
+        finduserlocation: function () {
             console.log();
-            return $http.get(apiurl+"userlocation");
+            return $http.get(apiurl + "userlocation");
         },
-        findstore: function(){
+        findstore: function () {
             console.log();
-            return $http.get(apiurl+"store");
+            return $http.get(apiurl + "store");
         },
-        findoneappliance: function(id){
+        findoneappliance: function (id) {
             console.log();
-            return $http.get(apiurl+"appliance/"+id)
+            return $http.get(apiurl + "appliance/" + id)
         },
-        deleteappliance: function(id){
-            return $http.delete(apiurl+"appliance/"+id,{});
+        deleteappliance: function (id) {
+            return $http.delete(apiurl + "appliance/" + id, {});
         },
-        updateappliance: function(data){
-            return $http.put(apiurl+"appliance/"+data.id,data);
+        updateappliance: function (data) {
+            return $http.put(apiurl + "appliance/" + data.id, data);
         }
     }
 

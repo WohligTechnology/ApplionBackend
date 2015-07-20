@@ -1,6 +1,6 @@
 var uploadres = [];
 var appAppliancetype = angular.module('appAppliancetype', ['appliancetypeRest', 'ngRoute', 'angularFileUpload']);
-window.uploadUrl = 'http://localhost/ApplionBackend/upload.php';
+window.uploadUrl = 'http://wohlig.co.in/ApplionBackend/upload.php';
 appAppliancetype.controller('appliancetype',
     function ($scope, appliancetypeRest) {
         $scope.demo = "";

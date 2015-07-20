@@ -7,11 +7,15 @@ var brandRest = angular.module('brandRest', [])
     return {
         create: function (data) {
             console.log(data);
-            return $http.post(apiurl + "brand",data);
+            return $http.post(apiurl + "brand", data);
         },
         find: function () {
             console.log();
             return $http.get(apiurl + "brand");
+        },
+        findappliancetype: function () {
+            console.log();
+            return $http.get(apiurl + "appliancetype/findallproducts");
         },
         findonebrand: function (id) {
             console.log();

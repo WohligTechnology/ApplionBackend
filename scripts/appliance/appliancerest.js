@@ -16,7 +16,7 @@ var applianceRest = angular.module('applianceRest', [])
         findappliancetype: function () {
             console.log();
             return $http.get(apiurl + "appliancetype/findallproducts");
-        }
+        },
         findbrand: function () {
             console.log();
             return $http.get(apiurl + "brand");

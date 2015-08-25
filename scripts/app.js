@@ -462,7 +462,7 @@
 
     .filter('uploadpath', function () {
         return function (input) {
-            return "http://wohlig.co.in/ApplionBackend/uploads/" + input;
+            return "http://applion-1005.appspot.com/uploads/" + input;
         };
     });
 

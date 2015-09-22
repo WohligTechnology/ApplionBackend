@@ -6,7 +6,7 @@
 <head>
 
     <script>
-        var apiurl = "http://104.154.90.138/";
+        var apiurl = "http://104.197.28.147/";
 //        var apiurl = "http://localhost:1337/";
     </script>
     <meta charset="utf-8">

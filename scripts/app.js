@@ -462,7 +462,7 @@
 
     .filter('uploadpath', function () {
         return function (input) {
-            return "http://applion-1005.appspot.com/uploads/" + input;
+            return "http://applion-1076.appspot.com/uploads/" + input;
         };
     });
 
